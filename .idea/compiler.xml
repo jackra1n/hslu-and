@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="AnD" />
+        <module name="and_exercises" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="AnD" options="-Xlint:all,-processing" />
+      <module name="and_exercises" options="-Xlint:all,-processing" />
     </option>
   </component>
 </project>
