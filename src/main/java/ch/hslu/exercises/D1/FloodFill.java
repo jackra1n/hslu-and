@@ -18,6 +18,7 @@ public class FloodFill {
 
     private void colorPixel(int x, int y, Color fillColor, Color[][] grid) {
         colorPixelCounter++;
+        coordinatesOrder.add(new Point(x, y));
         grid[y][x] = fillColor;
     }
 
@@ -29,7 +30,6 @@ public class FloodFill {
         Color actualColor = getActualColor(x, y, grid);
         if ((actualColor != outsideColor) && (actualColor != fillColor)) {
             colorPixel(x, y, fillColor, grid);
-            coordinatesOrder.add(new Point(x, y));
             colorArea(x + 1, y, fillColor, outsideColor, grid);
             colorArea(x, y - 1, fillColor, outsideColor, grid);
             colorArea(x - 1, y, fillColor, outsideColor, grid);
@@ -72,13 +72,13 @@ public class FloodFill {
 
         // Start the flood fill algorithm
         FloodFill floodFill = new FloodFill();
-        floodFill.colorArea(3, 7, Color.gray, Color.black, grid);
+        floodFill.colorArea(3, 6, Color.gray, Color.black, grid);
 
         System.out.println("Coordinates order:");
         for (int y = 0; y < grid.length; y++) {
             for (int x = 0; x < grid[0].length; x++) {
                 if (coordinatesOrder.contains(new Point(x, y))) {
-                    System.out.printf("%02d ", coordinatesOrder.indexOf(new Point(x, y)));
+                    System.out.printf("%02d ", coordinatesOrder.indexOf(new Point(x, y)) + 1);
                 } else {
                     System.out.print(" . ");
                 }

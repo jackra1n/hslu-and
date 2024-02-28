@@ -15,7 +15,6 @@ public class NextSymmetricNumber {
         return true;
     }
 
-    // Function to find the next symmetric number greater than the given number
     public static int findNextSymmetricNumber(int number) {
         int nextNumber = number + 1;
         while (!isSymmetric(nextNumber)) {
