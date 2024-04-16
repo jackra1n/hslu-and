@@ -40,7 +40,7 @@ public class FloodFill {
     public static void main(String[] args) {
         Color[][] grid = new Color[9][10];
 
-        // Initialize the grid with black and white colors as per the provided image
+        // Initialize the grid with black and white colors
         // Black is the outside color and white is the color we want to fill
         for (int y = 0; y < grid.length; y++) {
             for (int x = 0; x < grid[0].length; x++) {

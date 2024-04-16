@@ -6,8 +6,8 @@ public class AhaExampleTest {
 
     @Test
     void testTask() throws InterruptedException {
-        AhaExample.task(2);
-        AhaExample.task(5);
+        AhaExample.task(10);
+        AhaExample.task(20);
         AhaExample.task(10);
     }
 }

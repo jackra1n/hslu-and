@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 public class AhaExample {
 
     private static final Logger LOG = LoggerFactory.getLogger(AhaExample.class);
-    private static final int sleepTimeMs = 5;
+    private static final int sleepTimeMs = 1;
 
     private static int task1Counter = 0;
     private static int task2Counter = 0;

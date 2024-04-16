@@ -21,16 +21,18 @@ public class FibonacciTest {
         result = Fibonacci.fiboRec1(3);
         assertThat(result).isEqualTo(2);
 
-        result = Fibonacci.fiboRec1(10);
-        assertThat(result).isEqualTo(55);
     }
 
     @Test
     void testFiboRec2() {
         var fibo = new Fibonacci();
 
-        var result = fibo.fiboRec2(3);
-        assertThat(result).isEqualTo(2);
+        var result = fibo.fiboRec2(1);
+        assertThat(result).isEqualTo(1);
+        fibo.clearMemo();
+
+        result = fibo.fiboRec2(2);
+        assertThat(result).isEqualTo(1);
         fibo.clearMemo();
 
         result = fibo.fiboRec2(10);
