@@ -16,10 +16,8 @@
 package ch.hslu.exercises.SW08_N3.conclist;
 
 import java.util.*;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
+
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
@@ -49,6 +47,7 @@ public final class DemoConcurrentList {
         List<Integer> list = Collections.synchronizedList(new LinkedList<>());
 
         final List<Future<Long>> futures = new ArrayList<>();
+        var start = System.currentTimeMillis();
         try (final ExecutorService executor = Executors.newCachedThreadPool()) {
             for (int i = 0; i < 3; i++) {
                 futures.add(executor.submit(new Producer(list, 1000)));
@@ -63,6 +62,7 @@ public final class DemoConcurrentList {
             LOG.info("prod tot = {}", totProd);
             long totCons = executor.submit(new Consumer(list)).get();
             LOG.info("cons tot = {}", totCons);
+            LOG.info("total time = {}ms", System.currentTimeMillis() - start);
         } finally {
             // Executor shutdown
         }
