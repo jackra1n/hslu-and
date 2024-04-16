@@ -43,6 +43,10 @@ public final class Consumer implements Callable<Long> {
      */
     @Override
     public Long call() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        long sum = 0;
+        for (Integer number : list) {
+            sum += number;
+        }
+        return sum;
     }
 }
