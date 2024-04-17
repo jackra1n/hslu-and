@@ -29,13 +29,13 @@ public final class BlockingQueueDemo {
 
     public static void main(final String args[]) throws InterruptedException, ExecutionException {
         // example with BlockingQueue
-        ArrayBlockingQueue<Integer> list = new ArrayBlockingQueue<>(10000);
+        ArrayBlockingQueue<Integer> list = new ArrayBlockingQueue<>(10_000_000);
 
         final List<Future<Long>> futures = new ArrayList<>();
         var start = System.currentTimeMillis();
         try (final ExecutorService executor = Executors.newCachedThreadPool()) {
             for (int i = 0; i < 3; i++) {
-                futures.add(executor.submit(new BlockingProducer(list, 1000)));
+                futures.add(executor.submit(new BlockingProducer(list, 1_000_000)));
             }
             Iterator<Future<Long>> iterator = futures.iterator();
             long totProd = 0;

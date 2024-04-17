@@ -50,7 +50,7 @@ public final class DemoConcurrentList {
         var start = System.currentTimeMillis();
         try (final ExecutorService executor = Executors.newCachedThreadPool()) {
             for (int i = 0; i < 3; i++) {
-                futures.add(executor.submit(new Producer(list, 1000)));
+                futures.add(executor.submit(new Producer(list, 100_000)));
             }
             Iterator<Future<Long>> iterator = futures.iterator();
             long totProd = 0;

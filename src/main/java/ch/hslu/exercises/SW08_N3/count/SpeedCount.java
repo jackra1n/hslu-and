@@ -29,7 +29,7 @@ public final class SpeedCount {
 
     private static final int COUNTS = 1_000_000;
     private static final int PASSES = 10;
-    private static final int THREADS = 16;
+    private static final int THREADS = 4;
     /**
      * Privater Konstruktor.
      */
